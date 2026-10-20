@@ -1,0 +1,338 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sneha Konda Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sneha Konda, Senior BI and Data Analyst in Birmingham, UK. Microsoft Fabric, Power BI and SQL reporting in regulated environments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one reading column with a wide data band; a medallion lineage strip (bronze, silver, gold) runs through the page as the signature detail */
+:root{
+  --bg:#F5F6F4; --surface:#FFFFFF; --ink:#16212B; --muted:#56636E; --line:#DCE1E3; --soft:#E9EDEE;
+  --accent:#0E5A6B; --accent-soft:#DCEBEE;
+  --bronze:#A2622C; --silver:#7D8A93; --gold:#B88A12;
+  --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10171D; --surface:#17212A; --ink:#E6ECEF; --muted:#9AA8B2; --line:#2A3743; --soft:#1D2934;
+    --accent:#5FB3C4; --accent-soft:#16323A;
+    --bronze:#D08B4E; --silver:#A9B5BD; --gold:#E0B63E; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10171D; --surface:#17212A; --ink:#E6ECEF; --muted:#9AA8B2; --line:#2A3743; --soft:#1D2934;
+  --accent:#5FB3C4; --accent-soft:#16323A;
+  --bronze:#D08B4E; --silver:#A9B5BD; --gold:#E0B63E; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto}
+section{padding-block:56px;border-top:1px solid var(--line)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;font-stretch:90%;letter-spacing:-.01em;margin-bottom:24px}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.measure{max-width:65ch}
+
+/* hero */
+header.hero{padding-block:64px 48px;display:grid;gap:28px}
+.hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;font-stretch:78%;line-height:.95;letter-spacing:-.02em}
+.role{font-family:var(--display);font-size:clamp(19px,2.4vw,24px);font-weight:500;font-stretch:95%;color:var(--muted)}
+.lead{font-size:19px;max-width:62ch}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;
+  padding:10px 16px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.email{font-family:var(--mono);font-size:14.5px;user-select:all;color:var(--ink)}
+.copied{font-size:14px;color:var(--accent)}
+
+/* lineage strip */
+.lineage{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.stage{padding:14px 16px;border-right:1px solid var(--line);min-width:0}
+.stage:last-child{border-right:0}
+.stage b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.stage span{font-size:14.5px;color:var(--muted)}
+.stage.src b{color:var(--muted)} .stage.br b{color:var(--bronze)} .stage.si b{color:var(--silver)} .stage.go b{color:var(--gold)} .stage.bi b{color:var(--accent)}
+.stage.br{box-shadow:inset 0 3px 0 var(--bronze)} .stage.si{box-shadow:inset 0 3px 0 var(--silver)} .stage.go{box-shadow:inset 0 3px 0 var(--gold)} .stage.bi{box-shadow:inset 0 3px 0 var(--accent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-block:1px solid var(--line)}
+.stat{padding:22px 18px 22px 0}
+.stat+.stat{padding-left:18px;border-left:1px solid var(--line)}
+.stat strong{display:block;font-family:var(--display);font-size:clamp(34px,5vw,52px);font-weight:800;font-stretch:80%;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:15px;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px}
+.about .text{display:grid;gap:16px}
+
+/* toolkit */
+.toolkit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}
+.toolkit h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:14px;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--ink)}
+
+/* process */
+ol.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border-top:1px solid var(--line)}
+ol.process li{counter-increment:step;padding:16px 16px 18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:36px 1fr;gap:4px 10px}
+ol.process li::before{content:counter(step,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:3px;grid-row:span 2}
+ol.process b{font-weight:600}
+ol.process span{font-size:15px;color:var(--muted);grid-column:2}
+
+/* case studies */
+.cases{display:grid;gap:40px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.case figure{margin:0;border-bottom:1px solid var(--line);background:var(--soft)}
+.case figure img{display:block;width:100%;height:auto;max-width:100%}
+.case figcaption{font-size:13px;color:var(--muted);padding:8px 20px;font-style:italic}
+.case .inner{padding:24px;display:grid;gap:18px}
+.metric-row{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:14px;color:var(--accent)}
+.bai{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.bai h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--muted);margin:0 0 6px}
+.bai ul{margin:0;padding-left:18px;font-size:15.5px;display:grid;gap:4px}
+.myrole{font-size:15.5px;border-left:3px solid var(--gold);padding-left:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:12.5px;padding:2px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+
+/* timeline */
+.timeline{display:grid;gap:0}
+.row{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;padding-block:16px;border-bottom:1px solid var(--line)}
+.row .when{font-family:var(--mono);font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .what b{font-weight:600}
+.row .what span{display:block;color:var(--muted);font-size:15.5px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ul.plain li{font-size:15.5px}
+ul.plain li span{color:var(--muted)}
+
+footer{padding-block:56px 40px;border-top:1px solid var(--line);display:grid;gap:18px}
+footer h2{margin:0}
+.small{font-size:13.5px;color:var(--muted)}
+
+@media (max-width:760px){
+  .lineage{grid-template-columns:1fr}
+  .stage{border-right:0;border-bottom:1px solid var(--line)}
+  .stage:last-child{border-bottom:0}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){padding-left:0;border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .about,.toolkit,.bai,.two{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s ease}.btn:hover{transform:translateY(-1px)}}
+</style>
+</head><body>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <p class="eyebrow">Birmingham, UK · Open to UK roles</p>
+    <h1>Sneha Konda</h1>
+    <p class="role">Senior BI &amp; Data Analyst · Microsoft Fabric · Power BI · SQL</p>
+  </div>
+  <p class="lead">I build the reporting that regulated teams rely on: data pipelines in Microsoft Fabric, star schema models and Power BI dashboards that leaders use to make decisions. At Viatris I own the reporting platform for Global Regulatory Affairs, used by 15 teams across the UK, Europe, the US and Asia.</p>
+  <div class="contact-row">
+    <a class="btn" href="https://www.linkedin.com/in/sneha-konda-147212127" target="_blank" rel="noopener">LinkedIn</a>
+    <button class="btn ghost" id="copyEmail" type="button">Copy email</button>
+    <span class="email" id="emailText">snehakonda2010@gmail.com</span>
+    <span class="copied" id="copied" aria-live="polite"></span>
+  </div>
+  <div class="lineage" aria-label="How my reporting is built, from source systems to Power BI">
+    <div class="stage src"><b>Sources</b><span>Veeva RIM, SharePoint, SQL Server</span></div>
+    <div class="stage br"><b>Bronze</b><span>Raw data landed in the Lakehouse</span></div>
+    <div class="stage si"><b>Silver</b><span>Cleaned, validated, reconciled</span></div>
+    <div class="stage go"><b>Gold</b><span>Star schema and T-SQL views</span></div>
+    <div class="stage bi"><b>Power BI</b><span>Semantic models and dashboards</span></div>
+  </div>
+</header>
+
+<div class="stats" role="list">
+  <div class="stat" role="listitem"><strong>30+</strong><span>Power BI dashboards delivered</span></div>
+  <div class="stat" role="listitem"><strong>15</strong><span>global teams using my reporting</span></div>
+  <div class="stat" role="listitem"><strong>12+ hrs</strong><span>saved every month by automation</span></div>
+  <div class="stat" role="listitem"><strong>50+</strong><span>data issues caught before leadership saw them</span></div>
+</div>
+
+<section id="about">
+  <div class="about">
+    <div><p class="eyebrow">About</p><h2>Reporting people can trust</h2></div>
+    <div class="text measure">
+      <p>I have 5+ years of experience in BI and data analysis. Most of my recent work is in pharmaceutical regulatory affairs, where a wrong number can affect an audit or a submission, so accuracy comes first.</p>
+      <p>I start with the business question, agree the measures with the people who own the data, and then build the pipeline, model and report. Every report I release has documented KPI definitions, assumptions and known limitations, so users know what it does and does not cover.</p>
+      <p>Before Viatris I worked as a data analyst at Infosys on telecoms, insurance and finance projects, and I hold an MSc in Business Analytics and Big Data from the University of Liverpool.</p>
+    </div>
+  </div>
+</section>
+
+<section id="toolkit">
+  <p class="eyebrow">Toolkit</p>
+  <h2>Tools I use every week</h2>
+  <div class="toolkit">
+    <div><h3>Business intelligence</h3><div class="chips">
+      <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query M</span><span class="chip">Semantic models</span><span class="chip">Row-level security</span><span class="chip">Deployment pipelines</span><span class="chip">Power Automate</span><span class="chip">SSRS</span><span class="chip">Tableau</span><span class="chip">Google Analytics</span><span class="chip">Excel and VBA</span></div></div>
+    <div><h3>Data and engineering</h3><div class="chips">
+      <span class="chip">SQL</span><span class="chip">T-SQL</span><span class="chip">SQL Server</span><span class="chip">Microsoft Fabric</span><span class="chip">Lakehouse</span><span class="chip">Dataflows Gen2</span><span class="chip">Medallion architecture</span><span class="chip">ETL</span><span class="chip">SSIS</span><span class="chip">Databricks</span><span class="chip">Python (pandas)</span><span class="chip">Git</span></div></div>
+    <div><h3>Modelling and data quality</h3><div class="chips">
+      <span class="chip">Kimball modelling</span><span class="chip">Star schema</span><span class="chip">Forecasting</span><span class="chip">Data validation</span><span class="chip">Reconciliation</span><span class="chip">Root cause analysis</span><span class="chip">Data governance</span><span class="chip">GxP</span></div></div>
+    <div><h3>Ways of working</h3><div class="chips">
+      <span class="chip">Stakeholder management</span><span class="chip">Requirements gathering</span><span class="chip">User training</span><span class="chip">Mentoring</span><span class="chip">Agile and Scrum</span><span class="chip">Jira</span></div></div>
+  </div>
+</section>
+
+<section id="process">
+  <p class="eyebrow">How I work</p>
+  <h2>From a question to a trusted report</h2>
+  <ol class="process">
+    <li><b>Frame the question</b><span>Find out what decision the report needs to support and who will use it.</span></li>
+    <li><b>Agree the measures</b><span>Define each KPI with the data owner before building anything.</span></li>
+    <li><b>Build the pipeline</b><span>Land source data in Fabric and clean it through Bronze, Silver and Gold.</span></li>
+    <li><b>Model the data</b><span>Design a star schema and reusable T-SQL views.</span></li>
+    <li><b>Validate</b><span>Reconcile against source systems and fix issues at the root.</span></li>
+    <li><b>Release</b><span>Publish through deployment pipelines with row-level security.</span></li>
+    <li><b>Document and train</b><span>Write down definitions and limits, and train the people who use it.</span></li>
+  </ol>
+</section>
+
+<section id="work">
+  <p class="eyebrow">Selected work</p>
+  <h2>Case studies</h2>
+  <div class="cases">
+    <article class="case">
+      <div class="inner">
+        <div><p class="eyebrow">Viatris · Compliance Portfolio and Business Process team</p><h3>105 projects, 6 departments, one decision tool</h3></div>
+        <div class="metric-row"><span>105 projects → 1 dashboard</span><span>6 compliance departments</span><span>~2 hrs a day saved</span><span>Refreshes on German time</span></div>
+        <div class="bai">
+          <div><h4>Before</h4><ul><li>Each project was tracked in its own Sintel Form.</li><li>The team checked project status by hand, which took around 2 hours a day.</li></ul></div>
+          <div><h4>After</h4><ul><li>All project forms feed one Power BI dashboard through Fabric pipelines, Dataflows Gen2 and a Lakehouse.</li><li>Refreshes are scheduled to the team's German working hours.</li></ul></div>
+          <div><h4>Impact</h4><ul><li>It is now the leadership decision tool for 105 projects across 6 compliance departments.</li><li>Leaders track kick-off and due dates, team performance and latest updates for every project in one place.</li><li>Around 2 hours a day of manual checking saved.</li></ul></div>
+        </div>
+        <p class="myrole"><b>My role:</b> I led the project end to end, from requirements with the team to the pipelines, data model, dashboard and refresh schedule.</p>
+        <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">Dataflows Gen2</span><span class="tag">Lakehouse</span><span class="tag">Power BI</span><span class="tag">SharePoint</span><span class="tag">Sintel Forms</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="inner">
+        <div><p class="eyebrow">Viatris · Global Regulatory Affairs</p><h3>Turning a 3-day leadership pack into a live dashboard</h3></div>
+        <div class="metric-row"><span>3 days → automated</span><span>8 reports → 4 dashboards</span><span>12+ hrs saved a month</span></div>
+        <div class="bai">
+          <div><h4>Before</h4><ul><li>A monthly PowerPoint pack for leadership took up to 3 days to prepare.</li><li>8 legacy Veeva RIM reports gave overlapping answers.</li></ul></div>
+          <div><h4>After</h4><ul><li>A refreshable Power BI dashboard replaced the pack.</li><li>4 dashboards built on 20+ reusable SQL views.</li><li>Fabric pipelines and Python notebooks handle data prep and checks.</li></ul></div>
+          <div><h4>Impact</h4><ul><li>12+ hours saved every month.</li><li>Refreshes around 20% faster after model and SQL tuning.</li></ul></div>
+        </div>
+        <p class="myrole"><b>My role:</b> I led the reporting project, designed the data model and built the dashboards with business partners.</p>
+        <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">Power BI</span><span class="tag">T-SQL</span><span class="tag">Python</span><span class="tag">Veeva RIM</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="inner">
+        <div><p class="eyebrow">Viatris · Workforce analytics</p><h3>Helping leadership rebalance a 50-person function</h3></div>
+        <div class="metric-row"><span>50+ employees covered</span><span>15 people moved</span><span>2-year forecasts, 30+ markets</span></div>
+        <div class="bai">
+          <div><h4>Before</h4><ul><li>No single view of workload or capacity across regulatory teams.</li><li>Resourcing decisions relied on manual updates.</li></ul></div>
+          <div><h4>After</h4><ul><li>A Workforce Analytics dashboard for the Global Head of Regulatory Affairs.</li><li>Submission-to-approval timelines and 2-year workload forecasts in one place.</li></ul></div>
+          <div><h4>Impact</h4><ul><li>Leadership moved 15 people across departments.</li><li>Extra work assigned where there was capacity, and individual performance tracked.</li></ul></div>
+        </div>
+        <p class="myrole"><b>My role:</b> I gathered requirements with the Global Head, built the model and dashboard, and produced the forecasts.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Forecasting</span><span class="tag">SQL</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="inner">
+        <div><p class="eyebrow">Viatris · Data model and quality</p><h3>Catching 50+ data issues before leadership saw them</h3></div>
+        <div class="metric-row"><span>14 fact and dimension tables</span><span>35+ T-SQL views</span><span>50+ issues resolved</span></div>
+        <div class="bai">
+          <div><h4>Before</h4><ul><li>Reports pulled from different sources with no shared definitions.</li><li>Data errors reached leadership reports.</li></ul></div>
+          <div><h4>After</h4><ul><li>Kimball star schema models across 14 tables.</li><li>Validation and reconciliation checks on every refresh.</li><li>A documented definition for every KPI.</li></ul></div>
+          <div><h4>Impact</h4><ul><li>50+ data issues fixed before leadership saw them.</li><li>Supported GxP audits.</li><li>Caught a migration rule that misclassified records; the revised logic was adopted.</li></ul></div>
+        </div>
+        <p class="myrole"><b>My role:</b> I designed the model, wrote the views and set up the checks and documentation standards.</p>
+        <div class="tags"><span class="tag">Kimball</span><span class="tag">Star schema</span><span class="tag">T-SQL</span><span class="tag">Data quality</span><span class="tag">GxP</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="projects">
+  <p class="eyebrow">Projects</p>
+  <h2>Academic and earlier work</h2>
+  <div class="timeline">
+    <div class="row"><div class="when">MSc · 2021–22</div><div class="what"><b>Benchmarking and forecasting two manufacturing companies (dissertation, Merit)</b><span>Compared revenue, profit margins, costs and financial ratios from 3 years of annual reports in a Power BI dashboard built on Excel, and forecast future performance.</span></div></div>
+    <div class="row"><div class="when">Infosys · 2018–19</div><div class="what"><b>Website journey analysis for a telecoms client</b><span>Used Google Analytics to find pages with high traffic but low conversion. The client implemented my customer journey recommendations.</span></div></div>
+    <div class="row"><div class="when">Infosys · 2018–19</div><div class="what"><b>Data error root cause analysis</b><span>Reconciled 25 datasets in SQL, found the causes of 20+ recurring errors and cut manual checking by 3 hours a day.</span></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="two">
+    <div>
+      <p class="eyebrow">Experience</p>
+      <h2>Where I have worked</h2>
+      <div class="timeline">
+        <div class="row"><div class="when">Aug 2022 – now</div><div class="what"><b>Senior BI &amp; Data Analyst</b><span>Viatris · London</span></div></div>
+        <div class="row"><div class="when">Jun 2018 – May 2019</div><div class="what"><b>Data Analyst</b><span>Infosys · Pune</span></div></div>
+        <div class="row"><div class="when">Dec 2017 – Jun 2018</div><div class="what"><b>Quality Assurance Tester</b><span>Infosys · Pune</span></div></div>
+        <div class="row"><div class="when">Apr 2017 – Dec 2017</div><div class="what"><b>Business Intelligence Analyst</b><span>S K Realty · Mumbai</span></div></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Education</p>
+      <h2>Study and certificates</h2>
+      <ul class="plain">
+        <li><b>MSc Business Analytics and Big Data</b><br><span>University of Liverpool · 2020–22</span></li>
+        <li><b>BSc Computer Applications</b><br><span>SNDT Women's University, Mumbai · 2014–17</span></li>
+        <li><b>Advanced Google Analytics</b> and <b>Google Analytics 4</b><br><span>LinkedIn Learning · 2022</span></li>
+        <li><b>Python for Everybody</b> (with Honours)<br><span>University of Michigan · 2020</span></li>
+        <li><b>Python for Data Science</b><br><span>IBM · 2020</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p class="eyebrow">Contact</p>
+  <h2>Let's talk about your reporting</h2>
+  <p class="measure">I am looking for senior BI and data analyst roles in the UK. The quickest way to reach me is by email or LinkedIn.</p>
+  <div class="contact-row">
+    <a class="btn" href="https://www.linkedin.com/in/sneha-konda-147212127" target="_blank" rel="noopener">LinkedIn</a>
+    <button class="btn ghost" id="copyEmail2" type="button">Copy email</button>
+    <span class="email">snehakonda2010@gmail.com</span>
+    <span class="copied" id="copied2" aria-live="polite"></span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var email="snehakonda2010@gmail.com";
+  function wire(btnId,msgId){
+    var b=document.getElementById(btnId), m=document.getElementById(msgId);
+    if(!b) return;
+    b.addEventListener("click",function(){
+      function done(t){m.textContent=t;setTimeout(function(){m.textContent="";},2500);}
+      function fallback(){
+        var el=document.getElementById("emailText");
+        try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
+        done("Email selected. Press Ctrl+C to copy.");
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).then(function(){done("Email copied");},fallback);
+      } else fallback();
+    });
+  }
+  wire("copyEmail","copied"); wire("copyEmail2","copied2");
+})();
+</script>
+</body></html>
