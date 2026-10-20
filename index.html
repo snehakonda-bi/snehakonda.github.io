@@ -8,8 +8,8 @@
 <style>
 /* Layout: one reading column with a wide data band; a medallion lineage strip (bronze, silver, gold) runs through the page as the signature detail */
 :root{
-  --bg:#F5F6F4; --surface:#FFFFFF; --ink:#16212B; --muted:#56636E; --line:#DCE1E3; --soft:#E9EDEE;
-  --accent:#0E5A6B; --accent-soft:#DCEBEE;
+  --bg:#F4F6F3; --surface:#FFFFFF; --ink:#14211B; --muted:#55635B; --line:#D9E1DB; --soft:#E8EEE9;
+  --accent:#1F6A4A; --accent-soft:#DDEDE4; --on-accent:#FFFFFF;
   --bronze:#A2622C; --silver:#7D8A93; --gold:#B88A12;
   --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
@@ -17,14 +17,14 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#10171D; --surface:#17212A; --ink:#E6ECEF; --muted:#9AA8B2; --line:#2A3743; --soft:#1D2934;
-    --accent:#5FB3C4; --accent-soft:#16323A;
+    --bg:#0F1714; --surface:#16211C; --ink:#E5ECE8; --muted:#98A89F; --line:#283730; --soft:#1B2822;
+    --accent:#5DBB8E; --accent-soft:#163227; --on-accent:#0F1714;
     --bronze:#D08B4E; --silver:#A9B5BD; --gold:#E0B63E; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#10171D; --surface:#17212A; --ink:#E6ECEF; --muted:#9AA8B2; --line:#2A3743; --soft:#1D2934;
-  --accent:#5FB3C4; --accent-soft:#16323A;
+  --bg:#0F1714; --surface:#16211C; --ink:#E5ECE8; --muted:#98A89F; --line:#283730; --soft:#1B2822;
+  --accent:#5DBB8E; --accent-soft:#163227; --on-accent:#0F1714;
   --bronze:#D08B4E; --silver:#A9B5BD; --gold:#E0B63E; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -127,6 +127,13 @@ footer h2{margin:0}
   .row{grid-template-columns:1fr;gap:4px}
 }
 @media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s ease}.btn:hover{transform:translateY(-1px)}}
+
+/* green accents */
+.btn{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--accent);border-color:var(--accent)}
+.stat strong{color:var(--accent)}
+.chip{background:var(--accent-soft)}
+.case{border-top:3px solid var(--accent)}
 </style>
 </head><body>
 
@@ -146,7 +153,7 @@ footer h2{margin:0}
     <span class="copied" id="copied" aria-live="polite"></span>
   </div>
   <div class="lineage" aria-label="How my reporting is built, from source systems to Power BI">
-    <div class="stage src"><b>Sources</b><span>Fabric SQL endpoint, SQL Server, SharePoint, Excel</span></div>
+    <div class="stage src"><b>Sources</b><span>Microsoft Fabric, SQL Server, SharePoint, Excel, Sintel Forms</span></div>
     <div class="stage br"><b>Bronze</b><span>Raw data landed in the Lakehouse</span></div>
     <div class="stage si"><b>Silver</b><span>Cleaned, validated, reconciled</span></div>
     <div class="stage go"><b>Gold</b><span>Star schema and T-SQL views</span></div>
@@ -203,7 +210,7 @@ footer h2{margin:0}
 
 <section id="work">
   <p class="eyebrow">Selected work</p>
-  <h2>Case studies</h2>
+  <h2>Results that leadership uses</h2>
   <div class="cases">
     <article class="case">
       <div class="inner">
@@ -222,11 +229,11 @@ footer h2{margin:0}
     <article class="case">
       <div class="inner">
         <div><p class="eyebrow">Viatris · Business Process Operations</p><h3>Turning a 3-day PowerPoint pack into a live dashboard</h3></div>
-        <div class="metric-row"><span>3-day monthly pack → live dashboard</span><span>Cycle time and completed requests</span><span>Led end to end</span></div>
+        <div class="metric-row"><span>3-day monthly pack → live dashboard</span><span>100+ requests tracked</span><span>~15 users, incl. Head of Compliance</span></div>
         <div class="bai">
           <div><h4>Before</h4><ul><li>A monthly PowerPoint pack for leadership took up to 3 days to prepare by hand.</li><li>Figures such as cycle time and completed requests were pulled together manually each month.</li></ul></div>
-          <div><h4>After</h4><ul><li>A Power BI dashboard connected to the SQL database replaced the pack.</li><li>Cycle time, completed requests and other operational measures in one view, refreshed automatically.</li></ul></div>
-          <div><h4>Impact</h4><ul><li>Up to 3 days of manual preparation removed every month.</li><li>Leadership sees current figures whenever they need them, not once a month.</li></ul></div>
+          <div><h4>After</h4><ul><li>A Power BI dashboard connected to the SQL database replaced the pack.</li><li>Cycle time, completed requests and other operational measures for 100+ requests, tracked by month and year in one view and refreshed automatically.</li></ul></div>
+          <div><h4>Impact</h4><ul><li>Up to 3 days of manual preparation removed every month.</li><li>Used by around 15 people in the operations team, including the Head of Compliance.</li><li>Leadership sees current figures whenever they need them, not once a month.</li></ul></div>
         </div>
         <p class="myrole"><b>My role:</b> I led the project end to end, from requirements with the team to the SQL, data model and dashboard.</p>
         <div class="tags"><span class="tag">SQL Server</span><span class="tag">T-SQL</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
@@ -235,8 +242,8 @@ footer h2{margin:0}
 
     <article class="case">
       <div class="inner">
-        <div><p class="eyebrow">Viatris · Workforce analytics</p><h3>Helping leadership rebalance a 50-person function</h3></div>
-        <div class="metric-row"><span>50+ employees covered</span><span>15 people moved</span><span>2-year forecasts, 30+ markets</span></div>
+        <div><p class="eyebrow">Viatris · Workforce analytics</p><h3>Helping leadership rebalance a 50+ person function</h3></div>
+        <div class="metric-row"><span>50+ employees covered</span><span>15 people moved</span><span>1 view for the Global Head of Regulatory Affairs</span></div>
         <div class="bai">
           <div><h4>Before</h4><ul><li>No single view of workload or capacity across regulatory teams.</li><li>Resourcing decisions relied on manual updates.</li></ul></div>
           <div><h4>After</h4><ul><li>A Workforce Analytics dashboard for the Global Head of Regulatory Affairs.</li><li>Submission-to-approval timelines and 2-year workload forecasts in one place.</li></ul></div>
@@ -250,7 +257,7 @@ footer h2{margin:0}
     <article class="case">
       <div class="inner">
         <div><p class="eyebrow">Viatris · Data model and quality</p><h3>Catching 50+ data issues before leadership saw them</h3></div>
-        <div class="metric-row"><span>14 fact and dimension tables</span><span>35+ T-SQL views</span><span>50+ issues resolved</span><span>8 reports → 4 dashboards</span><span>12+ hrs saved a month</span></div>
+        <div class="metric-row"><span>50+ issues resolved</span><span>14 fact and dimension tables</span><span>12+ hrs saved a month</span></div>
         <div class="bai">
           <div><h4>Before</h4><ul><li>Reports pulled from different sources with no shared definitions.</li><li>Data errors reached leadership reports.</li></ul></div>
           <div><h4>After</h4><ul><li>Kimball star schema models across 14 tables.</li><li>Validation and reconciliation checks on every refresh.</li><li>A documented definition for every KPI.</li><li>8 legacy Veeva RIM reports replaced by 4 dashboards on 20+ reusable SQL views.</li></ul></div>
@@ -271,6 +278,7 @@ footer h2{margin:0}
     <div class="row"><div class="when">MSc · 2021–22</div><div class="what"><b>Benchmarking and forecasting two manufacturing companies (dissertation, Merit)</b><span>Compared revenue, profit margins, costs and financial ratios from 3 years of annual reports in a Power BI dashboard built on Excel, and forecast future performance.</span></div></div>
     <div class="row"><div class="when">Infosys · 2018–19</div><div class="what"><b>Website journey analysis for a telecoms client</b><span>Used Google Analytics to find pages with high traffic but low conversion. The client implemented my customer journey recommendations.</span></div></div>
     <div class="row"><div class="when">Infosys · 2018–19</div><div class="what"><b>Data error root cause analysis</b><span>Reconciled 25 datasets in SQL, found the causes of 20+ recurring errors and cut manual checking by 3 hours a day.</span></div></div>
+    <div class="row"><div class="when">Infosys · 2018–19</div><div class="what"><b>Purchase order and cost forecasting for a finance client</b><span>Cleaned purchase order and supplier data in Python (pandas), then built sales and cost forecasts and scenario analysis in SQL and Excel for the client team.</span></div></div>
   </div>
 </section>
 
@@ -280,7 +288,7 @@ footer h2{margin:0}
       <p class="eyebrow">Experience</p>
       <h2>Where I have worked</h2>
       <div class="timeline">
-        <div class="row"><div class="when">Aug 2022 – now</div><div class="what"><b>Senior BI &amp; Data Analyst</b><span>Viatris · London</span></div></div>
+        <div class="row"><div class="when">Aug 2022 – now</div><div class="what"><b>Specialist, Global Regulatory Operations Systems Support (Senior BI &amp; Data Analyst)</b><span>Viatris · London</span></div></div>
         <div class="row"><div class="when">Jun 2018 – May 2019</div><div class="what"><b>Data Analyst</b><span>Infosys · Pune</span></div></div>
         <div class="row"><div class="when">Dec 2017 – Jun 2018</div><div class="what"><b>Quality Assurance Tester</b><span>Infosys · Pune</span></div></div>
         <div class="row"><div class="when">Apr 2017 – Dec 2017</div><div class="what"><b>Business Intelligence Analyst</b><span>S K Realty · Mumbai</span></div></div>
